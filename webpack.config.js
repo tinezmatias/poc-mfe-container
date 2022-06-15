@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const deps = require('./package.json').dependencies;
 module.exports = {
   output: {
-    publicPath: 'http://localhost:3000/',
+    publicPath: '/',
     clean: true,
   },
 
@@ -46,8 +46,8 @@ module.exports = {
       name: 'container',
       filename: 'remoteEntry.js',
       remotes: {
-        list: 'list@http://localhost:3001/remoteEntry.js',
-        details: 'details@http://localhost:3002/remoteEntry.js',
+        list: 'list@https://poc-mfe-list.vercel.app/remoteEntry.js',
+        details: 'details@https://poc-mfe-details.vercel.app/remoteEntry.js',
       },
       exposes: {},
       shared: {
